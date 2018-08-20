@@ -8,7 +8,7 @@
 public class Empleado {
     
     String nombre ;
-    int sueldo;
+    int sueldo, tipo;
     int horasExtra;
     
 public String getNombre() {
@@ -34,11 +34,29 @@ public int getHorasExtra() {
 public void setHorasExtra(int horasExtra ) {
         this.horasExtra = horasExtra ;
     }
+    
+public String getTipo(){
+    
+    if(tipo == 1){
+        return "Ingeniero";
+    }else if(tipo == 2){
+        return "Arquitecto";
+    }else if(tipo == 3){
+        return "Obrero";
+    }else{
+        return "Error";
+    }
+}
 
-public Empleado(String nombre,int sueldo,int horasExtra){
+public void setTipo(int tipo){
+    this.tipo = tipo;
+}
+
+public Empleado(String nombre,int sueldo, int tipo,int horasExtra){
 this.nombre = nombre ;
 this.sueldo = sueldo ;
 this.horasExtra = horasExtra;
+this.tipo = tipo;
 }
 
 }    
