@@ -5,29 +5,42 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Empleado
-{
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Empleado
-     */
-    public Empleado()
-    {
-        // initialise instance variables
-        x = 0;
+public class Empleado {
+    
+    String nombre ;
+    int sueldo;
+    int horasExtra;
+    
+public String getNombre() {
+        return nombre;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+public void setNombre(String nombre ) {
+        this.nombre = nombre ;
     }
+    
+public int getSueldo() {
+        return sueldo;
+    }
+    
+public void setSueldo(int sueldo ) {
+        this.sueldo = sueldo ;
+    }
+    
+public int getHorasExtra() {
+        return horasExtra;
+    }   
+    
+public void setHorasExtra(int horasExtra ) {
+        this.horasExtra = horasExtra ;
+    }
+
+public Empleado(String nombre,int sueldo,int horasExtra){
+this.nombre = nombre ;
+this.sueldo = sueldo ;
+this.horasExtra = horasExtra;
 }
+
+}    
+    
+    
