@@ -2,7 +2,7 @@
 /**
  * 
  * @authors Felipe Lobo, Alexis Chacon, Sergio Baron, Pablo Roman
- * @version 0.2a
+ * @version 1.2b
  */
 import java.util.*;
 import java.util.Scanner;
@@ -11,8 +11,7 @@ public class Sueldo
 {
     public static void main(String[] args){
         Scanner entrada = new Scanner(System.in);
-        boolean menu1 = true;
-        boolean menu2 = false;
+        boolean menu = true;
         
         String nombre;
         int opcion;
@@ -21,12 +20,8 @@ public class Sueldo
         
         //Array opara guardar los datos del empleado
         List<Empleado> detalles = new ArrayList<>();
-        
-        //System.out.println();
-        
-        
-        //Primer Menu
-        while(menu1){
+
+        while(menu){
            String entr=JOptionPane.showInputDialog("Bienvenido\nSistema de Control de Salarios\n\nSelecciona:\n1. Crear Empleado\n2. Ver detalles\n3. Mostrar Total a Pagar detalles\n4. Salir");
            opcion = Integer.parseInt(entr); 
            
@@ -45,7 +40,6 @@ public class Sueldo
                 
                 case 3:
                     double sueldoTotal;
-                    
                     for(Empleado i: detalles){
                         sueldoTotal = (i.getHorasExtra()*7900) + i.getSueldo();
                         JOptionPane.showMessageDialog(null, i.getNombre()
@@ -53,16 +47,16 @@ public class Sueldo
                         +"\nSueldo Extra: "+i.getHorasExtra()*7900
                         +"\n-----\nSueldo Total: "+ sueldoTotal);
                     }
-                break;
+                    break;
                 
                 case 4:
-                    int resp = JOptionPane.showConfirmDialog(null, "¿Está seguro?");
+                    int resp = JOptionPane.showConfirmDialog(null, "¿Estás seguro?");
                     if(resp== JOptionPane.YES_OPTION){
                         System.exit(0);
                     }
                     break;
                default:
-                    JOptionPane.showMessageDialog(null,"Valor no valido","Error",JOptionPane.ERROR_MESSAGE); 
+                    JOptionPane.showMessageDialog(null,"Valor no válido","Error",JOptionPane.ERROR_MESSAGE); 
             }
         }
         
